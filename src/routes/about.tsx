@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Mail, User, Brain, Salad, Siren, Mic2, GraduationCap, Star } from "lucide-react";
-import rachithImg from "@/assets/images/team/rachith1.jpg";
+import rachithImg from "@/assets/images/team/rachith1.JPG";
 import tharinduImg from "@/assets/images/team/tharindu.jpeg";
 import githadiImg from "@/assets/images/team/githadi.jpeg";
 import kavindaImg from "@/assets/images/team/kavinda.jpeg";
