@@ -3,56 +3,65 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Mail, User, Brain, Salad, Siren, Mic2, GraduationCap, Star } from "lucide-react";
+import rachithImg from "@/assets/images/team/rachith1.jpg";
+import tharinduImg from "@/assets/images/team/tharindu.jpeg";
+import githadiImg from "@/assets/images/team/githadi.jpeg";
+import kavindaImg from "@/assets/images/team/kavinda.jpeg";
+
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About Us — PediTrack IPITPH | SLIIT Research Group 25-26J-442" },
-      { name: "description", content: "Meet the research team behind IPITPH — Group 25-26J-442, IT4010 Research Project, SLIIT 2025/2026." },
+      { title: "About Us - PediTrack IPITPH | SLIIT Research Group 25-26J-442" },
+      { name: "description", content: "Meet the research team behind IPITPH - Group 25-26J-442, Research Project, SLIIT 2025/2026." },
     ],
   }),
 });
 
 const members = [
   {
-    name: "M A R Tharana",
+    name: "Rachith Tharana Munasing",
     reg: "IT22107114",
     email: "IT22107114@my.sliit.lk",
     component: "AI-Driven Predictive Health Analytics with Multi-Domain Integration",
     role: "Group Leader",
     Icon: Brain,
     color: "from-violet-500 to-purple-700",
+    img: rachithImg,
     isLeader: true,
   },
   {
-    name: "T E Nawarathne",
+    name: "Tharindu Nawarathne",
     reg: "IT22218612",
     email: "IT22218612@my.sliit.lk",
     component: "ML-Driven Personalized Nutrition Optimization with Behavioral Analysis",
     role: "Research Member",
     Icon: Salad,
     color: "from-emerald-500 to-teal-700",
+    img: tharinduImg,
     isLeader: false,
   },
   {
-    name: "G S Wijayarathna",
+    name: "Githadi Wijayarathna",
     reg: "IT22087010",
     email: "IT22087010@my.sliit.lk",
     component: "Real-Time Emergency Response Integration with Predictive Risk Assessment",
     role: "Research Member",
     Icon: Siren,
     color: "from-rose-500 to-red-700",
+    img: githadiImg,
     isLeader: false,
   },
   {
-    name: "K D Kurukulasooriya",
+    name: "Kavinda Kurukulasooriya",
     reg: "IT22121738",
     email: "IT22121738@my.sliit.lk",
     component: "Multilingual Voice-Activated Caregiver Support System",
     role: "Research Member",
     Icon: Mic2,
     color: "from-amber-500 to-orange-600",
+    img: kavindaImg,
     isLeader: false,
   },
 ];
@@ -75,8 +84,12 @@ function MemberCard({ m, index }: { m: typeof members[0]; index: number }) {
       {/* Avatar area */}
       <div className={`relative h-36 bg-gradient-to-br ${m.color} flex items-center justify-center`}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-        <div className="relative w-20 h-20 rounded-full bg-white/20 border-4 border-white/30 flex items-center justify-center">
-          <User className="h-10 w-10 text-white/80" />
+        <div className="relative w-24 h-24 rounded-full bg-white/20 border-4 border-white/30 flex items-center justify-center overflow-hidden bg-white">
+          {m.img ? (
+            <img src={m.img} alt={m.name} className="w-full h-full object-cover" />
+          ) : (
+            <User className="h-12 w-12 text-white/80" />
+          )}
         </div>
         {m.isLeader && (
           <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/30">
@@ -120,7 +133,7 @@ function AboutPage() {
             <p className="text-xs font-bold tracking-widest text-purple-200 uppercase mb-3">The Team</p>
             <h1 className="text-3xl lg:text-5xl font-bold text-white">About Us</h1>
             <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-              Group 25-26J-442 — IT4010 Research Project, Faculty of Computing, SLIIT 2025/2026.
+              Group 25-26J-442 - Research Project, Faculty of Computing, SLIIT 2025/2026.
             </p>
           </div>
         </div>

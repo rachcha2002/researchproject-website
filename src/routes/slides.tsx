@@ -8,8 +8,8 @@ export const Route = createFileRoute("/slides")({
   component: SlidesPage,
   head: () => ({
     meta: [
-      { title: "Presentations — PediTrack IPITPH | SLIIT Research" },
-      { name: "description", content: "Slide decks from all IPITPH research presentations — proposal, progress, and final presentations." },
+      { title: "Presentations - PediTrack IPITPH | SLIIT Research" },
+      { name: "description", content: "Slide decks from all IPITPH research presentations - proposal, progress, and final presentations." },
     ],
   }),
 });
@@ -24,6 +24,7 @@ interface Slide {
   status: SlideStatus;
   href?: string;
   presenters?: string;
+  thumb?: string;
 }
 
 const slides: Slide[] = [
@@ -32,24 +33,26 @@ const slides: Slide[] = [
     title: "Proposal Presentation",
     subtitle: "Research problem, objectives, methodology, and system overview presented to the evaluation panel.",
     date: "September 2025",
-    status: "available",
-    href: "#",
+    status: import.meta.env.VITE_SLIDES_PROPOSAL_URL ? "available" : "pending",
+    href: import.meta.env.VITE_SLIDES_PROPOSAL_URL,
     presenters: "Group 25-26J-442",
   },
   {
     id: "pp1",
     title: "Progress Presentation 1",
-    subtitle: "50% completion — literature review, data collection, initial model development, component architecture.",
+    subtitle: "50% completion - literature review, data collection, initial model development, component architecture.",
     date: "TBD",
-    status: "pending",
+    status: import.meta.env.VITE_SLIDES_PP1_URL ? "available" : "pending",
+    href: import.meta.env.VITE_SLIDES_PP1_URL,
     presenters: "Group 25-26J-442",
   },
   {
     id: "pp2",
     title: "Progress Presentation 2",
-    subtitle: "90% completion — full system integration, validated results, and deployment status.",
+    subtitle: "90% completion - full system integration, validated results, and deployment status.",
     date: "TBD",
-    status: "pending",
+    status: import.meta.env.VITE_SLIDES_PP2_URL ? "available" : "pending",
+    href: import.meta.env.VITE_SLIDES_PP2_URL,
     presenters: "Group 25-26J-442",
   },
   {
@@ -57,7 +60,8 @@ const slides: Slide[] = [
     title: "Final Presentation",
     subtitle: "Complete system demonstration to the evaluation panel with full research findings.",
     date: "TBD",
-    status: "pending",
+    status: import.meta.env.VITE_SLIDES_FINAL_URL ? "available" : "pending",
+    href: import.meta.env.VITE_SLIDES_FINAL_URL,
     presenters: "Group 25-26J-442",
   },
 ];
@@ -80,19 +84,31 @@ function SlideCard({ slide, index }: { slide: Slide; index: number }) {
       className="bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-shadow overflow-hidden group"
     >
       {/* Slide preview placeholder */}
-      <div className={`relative h-44 bg-gradient-to-br ${componentColors[index % componentColors.length]} flex items-center justify-center`}>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0px, white 1px, transparent 1px, transparent 12px)" }} />
-        <div className="text-center text-white/90 z-10 px-4">
-          <Presentation className="h-10 w-10 mx-auto mb-2 opacity-80" />
-          <p className="text-sm font-bold">{slide.title}</p>
-          <p className="text-xs opacity-70 mt-0.5">{slide.date}</p>
+      {slide.thumb ? (
+        <div className="relative h-44 bg-gray-100 overflow-hidden">
+          <img src={slide.thumb} alt={slide.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+          {isAvailable && (
+            <span className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/30 z-10">
+              AVAILABLE
+            </span>
+          )}
         </div>
-        {isAvailable && (
-          <span className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/30">
-            AVAILABLE
-          </span>
-        )}
-      </div>
+      ) : (
+        <div className={`relative h-44 bg-gradient-to-br ${componentColors[index % componentColors.length]} flex items-center justify-center`}>
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0px, white 1px, transparent 1px, transparent 12px)" }} />
+          <div className="text-center text-white/90 z-10 px-4">
+            <Presentation className="h-10 w-10 mx-auto mb-2 opacity-80" />
+            <p className="text-sm font-bold">{slide.title}</p>
+            <p className="text-xs opacity-70 mt-0.5">{slide.date}</p>
+          </div>
+          {isAvailable && (
+            <span className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/30 z-10">
+              AVAILABLE
+            </span>
+          )}
+        </div>
+      )}
 
       <div className="p-5">
         <h3 className="font-bold text-dark text-base">{slide.title}</h3>

@@ -8,8 +8,8 @@ export const Route = createFileRoute("/documents")({
   component: DocumentsPage,
   head: () => ({
     meta: [
-      { title: "Documents — PediTrack IPITPH | SLIIT Research" },
-      { name: "description", content: "All research documents for IPITPH — project charter, proposal, progress reports, checklists, and final documents." },
+      { title: "Documents - PediTrack IPITPH | SLIIT Research" },
+      { name: "description", content: "All research documents for IPITPH - project charter, proposal, progress reports, checklists, and final documents." },
     ],
   }),
 });
@@ -32,47 +32,46 @@ const docGroups: DocGroup[] = [
   {
     category: "Project Charter",
     docs: [
-      { label: "Group Project Charter — 25-26J-442", status: "available", href: "#" },
+      { label: "Group Project Charter - 25-26J-442", status: import.meta.env.VITE_DOCS_CHARTER ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHARTER },
     ],
   },
   {
     category: "Proposal Documents",
     docs: [
-      { label: "Group Proposal Report", status: "available", href: "#" },
-      { label: "IT22107114 — Individual Component Proposal (AI Predictive Analytics)", status: "available", href: "#" },
-      { label: "IT22218612 — Individual Component Proposal (Nutrition Optimization)", status: "available", href: "#" },
-      { label: "IT22087010 — Individual Component Proposal (Emergency Response)", status: "available", href: "#" },
-      { label: "IT22121738 — Individual Component Proposal (Voice Assistant)", status: "available", href: "#" },
+      { label: "IT22107114 - Individual Component Proposal (AI Predictive Analytics)", status: import.meta.env.VITE_DOCS_PROP_THARANA ? "available" : "pending", href: import.meta.env.VITE_DOCS_PROP_THARANA },
+      { label: "IT22218612 - Individual Component Proposal (Nutrition Optimization)", status: import.meta.env.VITE_DOCS_PROP_THARINDU ? "available" : "pending", href: import.meta.env.VITE_DOCS_PROP_THARINDU },
+      { label: "IT22087010 - Individual Component Proposal (Emergency Response)", status: import.meta.env.VITE_DOCS_PROP_GITHADI ? "available" : "pending", href: import.meta.env.VITE_DOCS_PROP_GITHADI },
+      { label: "IT22121738 - Individual Component Proposal (Voice Assistant)", status: import.meta.env.VITE_DOCS_PROP_KAVINDA ? "available" : "pending", href: import.meta.env.VITE_DOCS_PROP_KAVINDA },
     ],
   },
   {
     category: "Checklists",
     docs: [
-      { label: "Check List 1", status: "pending" },
-      { label: "Check List 2", status: "pending" },
+      { label: "Check List 1", status: import.meta.env.VITE_DOCS_CHECKLIST1 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST1 },
+      { label: "Check List 2", status: import.meta.env.VITE_DOCS_CHECKLIST2 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST2 },
     ],
   },
   {
     category: "Progress Reports",
     docs: [
-      { label: "Progress Report 1", status: "pending" },
-      { label: "Progress Report 2", status: "pending" },
+      { label: "Progress Report 1", status: import.meta.env.VITE_DOCS_PR1 ? "available" : "pending", href: import.meta.env.VITE_DOCS_PR1 },
+      { label: "Progress Report 2", status: import.meta.env.VITE_DOCS_PR2 ? "available" : "pending", href: import.meta.env.VITE_DOCS_PR2 },
     ],
   },
   {
     category: "Final Documents",
     docs: [
-      { label: "Final Report — IT22107114 (AI Predictive Analytics)", status: "pending" },
-      { label: "Final Report — IT22218612 (Nutrition Optimization)", status: "pending" },
-      { label: "Final Report — IT22087010 (Emergency Response)", status: "pending" },
-      { label: "Final Report — IT22121738 (Voice Assistant)", status: "pending" },
-      { label: "Final Group Report — IPITPH", status: "pending" },
+      { label: "Final Report - IT22107114 (AI Predictive Analytics)", status: import.meta.env.VITE_DOCS_FINAL_THARANA ? "available" : "pending", href: import.meta.env.VITE_DOCS_FINAL_THARANA },
+      { label: "Final Report - IT22218612 (Nutrition Optimization)", status: import.meta.env.VITE_DOCS_FINAL_THARINDU ? "available" : "pending", href: import.meta.env.VITE_DOCS_FINAL_THARINDU },
+      { label: "Final Report - IT22087010 (Emergency Response)", status: import.meta.env.VITE_DOCS_FINAL_GITHADI ? "available" : "pending", href: import.meta.env.VITE_DOCS_FINAL_GITHADI },
+      { label: "Final Report - IT22121738 (Voice Assistant)", status: import.meta.env.VITE_DOCS_FINAL_KAVINDA ? "available" : "pending", href: import.meta.env.VITE_DOCS_FINAL_KAVINDA },
+      { label: "Final Group Report - IPITPH", status: import.meta.env.VITE_DOCS_FINAL_GROUP ? "available" : "pending", href: import.meta.env.VITE_DOCS_FINAL_GROUP },
     ],
   },
   {
     category: "Research Paper",
     docs: [
-      { label: "IEEE Conference Paper — IPITPH", status: "pending" },
+      { label: "IEEE Conference Paper - IPITPH", status: import.meta.env.VITE_DOCS_PAPER ? "available" : "pending", href: import.meta.env.VITE_DOCS_PAPER },
     ],
   },
 ];

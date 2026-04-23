@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SlidesRouteImport } from './routes/slides'
+import { Route as ProductRouteImport } from './routes/product'
 import { Route as MilestonesRouteImport } from './routes/milestones'
 import { Route as DomainRouteImport } from './routes/domain'
 import { Route as DocumentsRouteImport } from './routes/documents'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SlidesRoute = SlidesRouteImport.update({
   id: '/slides',
   path: '/slides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductRoute = ProductRouteImport.update({
+  id: '/product',
+  path: '/product',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MilestonesRoute = MilestonesRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/documents': typeof DocumentsRoute
   '/domain': typeof DomainRoute
   '/milestones': typeof MilestonesRoute
+  '/product': typeof ProductRoute
   '/slides': typeof SlidesRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/documents': typeof DocumentsRoute
   '/domain': typeof DomainRoute
   '/milestones': typeof MilestonesRoute
+  '/product': typeof ProductRoute
   '/slides': typeof SlidesRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/documents': typeof DocumentsRoute
   '/domain': typeof DomainRoute
   '/milestones': typeof MilestonesRoute
+  '/product': typeof ProductRoute
   '/slides': typeof SlidesRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/domain'
     | '/milestones'
+    | '/product'
     | '/slides'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/domain'
     | '/milestones'
+    | '/product'
     | '/slides'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/documents'
     | '/domain'
     | '/milestones'
+    | '/product'
     | '/slides'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   DocumentsRoute: typeof DocumentsRoute
   DomainRoute: typeof DomainRoute
   MilestonesRoute: typeof MilestonesRoute
+  ProductRoute: typeof ProductRoute
   SlidesRoute: typeof SlidesRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/slides'
       fullPath: '/slides'
       preLoaderRoute: typeof SlidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/milestones': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocumentsRoute: DocumentsRoute,
   DomainRoute: DomainRoute,
   MilestonesRoute: MilestonesRoute,
+  ProductRoute: ProductRoute,
   SlidesRoute: SlidesRoute,
 }
 export const routeTree = rootRouteImport

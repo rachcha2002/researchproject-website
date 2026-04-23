@@ -7,14 +7,14 @@ import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lu
 
 // ─── STEP: Paste your Formspree endpoint here once you sign up at https://formspree.io ───
 // Example: "https://formspree.io/f/xyzabcde"
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgorpplz";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact Us — PediTrack IPITPH | SLIIT Research" },
-      { name: "description", content: "Contact Group 25-26J-442 — IPITPH research project, IT4010, SLIIT 2025/2026." },
+      { title: "Contact Us - PediTrack IPITPH | SLIIT Research" },
+      { name: "description", content: "Contact Group 25-26J-442 - IPITPH research project, IT4010, SLIIT 2025/2026." },
     ],
   }),
 });
@@ -96,8 +96,8 @@ function ContactPage() {
               {
                 Icon: Mail,
                 label: "Group Leader Email",
-                value: "IT22107114@my.sliit.lk",
-                href: "mailto:IT22107114@my.sliit.lk",
+                value: "rachiththarana@gmail.com",
+                href: "mailto:rachiththarana@gmail.com",
               },
               {
                 Icon: MapPin,
@@ -107,8 +107,8 @@ function ContactPage() {
               },
               {
                 Icon: Phone,
-                label: "Module",
-                value: "IT4010 Research Project 2025/2026",
+                label: "Contact",
+                value: "+94 711521161",
                 href: null,
               },
             ].map((item) => (
@@ -134,10 +134,10 @@ function ContactPage() {
               <p className="text-xs font-bold text-primary uppercase tracking-wide mb-2">Group Members</p>
               <ul className="space-y-1.5 text-sm text-gray-default">
                 {[
-                  { reg: "IT22107114", email: "IT22107114@my.sliit.lk" },
-                  { reg: "IT22218612", email: "IT22218612@my.sliit.lk" },
-                  { reg: "IT22087010", email: "IT22087010@my.sliit.lk" },
-                  { reg: "IT22121738", email: "IT22121738@my.sliit.lk" },
+                  { reg: "Rachith", email: "IT22107114@my.sliit.lk" },
+                  { reg: "Tharindu", email: "IT22218612@my.sliit.lk" },
+                  { reg: "Githadi", email: "IT22087010@my.sliit.lk" },
+                  { reg: "Kavinda", email: "IT22121738@my.sliit.lk" },
                 ].map((m) => (
                   <li key={m.reg} className="flex items-center justify-between gap-2 flex-wrap">
                     <span className="font-mono text-xs font-bold text-dark">{m.reg}</span>
@@ -157,7 +157,7 @@ function ContactPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            <div className="bg-white rounded-2xl border border-border shadow-card p-7">
+            <div className="bg-white rounded-2xl border border-border shadow-card p-7 mt-8">
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
@@ -176,7 +176,7 @@ function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4" id="contact-form">
-                  <h2 className="text-lg font-bold text-dark mb-1">Send a Message</h2>
+                  <h2 className="text-lg font-bold text-dark mb-8">Send a Message</h2>
 
                   {/* Error banner */}
                   {status === "error" && (
@@ -188,7 +188,7 @@ function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="contact-name" className="block text-xs font-bold text-dark mb-1.5">Your Name *</label>
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-dark mb-4">Your Name *</label>
                       <input
                         id="contact-name"
                         type="text"
@@ -202,7 +202,7 @@ function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="contact-email" className="block text-xs font-bold text-dark mb-1.5">Email Address *</label>
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-dark mb-4">Email Address *</label>
                       <input
                         id="contact-email"
                         type="email"
@@ -218,7 +218,7 @@ function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-subject" className="block text-xs font-bold text-dark mb-1.5">Subject *</label>
+                    <label htmlFor="contact-subject" className="block text-xs font-bold text-dark mb-4">Subject *</label>
                     <input
                       id="contact-subject"
                       type="text"
@@ -233,7 +233,7 @@ function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-message" className="block text-xs font-bold text-dark mb-1.5">Message *</label>
+                    <label htmlFor="contact-message" className="block text-xs font-bold text-dark mb-4">Message *</label>
                     <textarea
                       id="contact-message"
                       name="message"
@@ -250,7 +250,7 @@ function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSending}
-                    className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-light transition-colors shadow-[0_8px_20px_-8px_rgb(124_58_237_/_0.5)] disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center mt-8gap-2 px-5 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-light transition-colors shadow-[0_8px_20px_-8px_rgb(124_58_237_/_0.5)] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {isSending ? (
                       <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</>

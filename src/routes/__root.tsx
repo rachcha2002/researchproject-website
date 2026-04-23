@@ -29,14 +29,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PediTrack — IPITPH Research Project | SLIIT 25-26J-442" },
+      { title: "PediTrack - IPITPH Research Project | SLIIT 25-26J-442" },
       {
         name: "description",
         content:
           "Integrated Predictive Intelligence Platform for Pediatric Healthcare. IT4010 Research Project, Group 25-26J-442, SLIIT 2025/2026.",
       },
       { name: "author", content: "Group 25-26J-442, SLIIT" },
-      { property: "og:title", content: "PediTrack — IPITPH Research Project" },
+      { property: "og:title", content: "PediTrack - IPITPH Research Project" },
       {
         property: "og:description",
         content:

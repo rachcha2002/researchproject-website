@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/documents", label: "Documents" },
   { to: "/slides", label: "Presentations" },
   { to: "/about", label: "About Us" },
+  { to: "/product", label: "Product" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -20,22 +21,22 @@ export function Footer() {
           <div className="md:col-span-1">
             <img src={whiteLogo} alt="PediTrack Logo" className="h-9 w-auto object-contain" />
             <p className="mt-3 text-sm text-white/60 max-w-xs leading-relaxed">
-              Integrated Predictive Intelligence Platform for Pediatric Healthcare
+              PediTrack - Integrated Predictive Intelligence Platform for Pediatric Healthcare
             </p>
             <p className="mt-2 text-xs text-white/40">
-              Group 25-26J-442 | IT4010 Research Project | SLIIT 2025/2026
+              Group 25-26J-442 | Research Project | SLIIT 2025/2026
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <p className="text-xs font-bold tracking-widest text-white uppercase">Quick Links</p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 grid grid-cols-2 gap-y-2.5 gap-x-4">
               {navLinks.map((l) => (
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-white/50 hover:text-white transition-colors"
+                    className="text-sm text-white/50 hover:text-white transition-colors truncate block"
                   >
                     {l.label}
                   </Link>
@@ -58,18 +59,16 @@ export function Footer() {
               </li>
               <li>SLIIT, New Kandy Road</li>
               <li>Malabe, Sri Lanka</li>
-              <li className="pt-1 text-white/30 text-xs">IT4010 Research Project 2025/2026</li>
+              <li className="pt-1 text-white/30 text-xs">+94 711521161</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            © 2025/2026 PediTrack — IPITPH | Group 25-26J-442 | SLIIT
+            © 2025/2026 PediTrack - IPITPH
           </p>
-          <p className="text-xs text-white/30">
-            Supervisor: Prof. Samantha Thelijjagoda &nbsp;|&nbsp; Co-Supervisor: Ms. Hansi De Silva
-          </p>
+
         </div>
       </div>
     </footer>

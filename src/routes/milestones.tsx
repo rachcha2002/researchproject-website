@@ -9,8 +9,8 @@ export const Route = createFileRoute("/milestones")({
   component: MilestonesPage,
   head: () => ({
     meta: [
-      { title: "Milestones — PediTrack IPITPH | SLIIT Research" },
-      { name: "description", content: "All project assessments, dates, and marks for IPITPH — Group 25-26J-442, IT4010 Research Project, SLIIT." },
+      { title: "Milestones - PediTrack IPITPH | SLIIT Research" },
+      { name: "description", content: "All project assessments, dates, and marks for IPITPH - Group 25-26J-442, IT4010 Research Project, SLIIT." },
     ],
   }),
 });
@@ -138,7 +138,7 @@ function MilestonesPage() {
             <p className="text-xs font-bold tracking-widest text-purple-200 uppercase mb-3">Assessments</p>
             <h1 className="text-3xl lg:text-5xl font-bold text-white">Project Milestones</h1>
             <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-              All assessments, dates, and marks allocated for the IPITPH research project — IT4010.
+              All assessments, dates, and marks allocated for the IPITPH research project - IT4010.
             </p>
             <p className="mt-2 text-white/50 text-sm">Total Assessment Marks: {totalMarks}%</p>
           </div>

@@ -11,6 +11,7 @@ const links = [
   { to: "/documents", label: "Documents" },
   { to: "/slides", label: "Presentations" },
   { to: "/about", label: "About Us" },
+  { to: "/product", label: "Product" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 

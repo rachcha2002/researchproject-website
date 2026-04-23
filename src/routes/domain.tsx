@@ -9,7 +9,7 @@ export const Route = createFileRoute("/domain")({
   component: DomainPage,
   head: () => ({
     meta: [
-      { title: "Domain — PediTrack IPITPH | SLIIT Research" },
+      { title: "Domain - PediTrack IPITPH | SLIIT Research" },
       { name: "description", content: "Research domain, literature survey, research gap, problem, objectives, methodology and technologies for the IPITPH project." },
     ],
   }),
@@ -25,7 +25,7 @@ const sections = [
         <p>
           The domain of AI-driven pediatric health monitoring has seen growing attention in recent years.
           Existing tools such as <strong>WHO Anthro</strong> and standard electronic health records focus
-          primarily on <em>recording</em> growth measurements rather than predicting future deviations.
+          primarily on recording growth measurements rather than predicting future deviations.
         </p>
         <p>
           Studies have explored LSTM-based time-series models for pediatric growth prediction, and
@@ -35,7 +35,7 @@ const sections = [
         <p>
           Emergency response systems in pediatric care have primarily relied on static triage protocols,
           while multilingual NLP for low-resource languages in healthcare contexts remains critically
-          underdeveloped. Existing solutions are <strong>fragmented</strong> — each addressing one domain
+          underdeveloped. Existing solutions are <strong>fragmented</strong> and each addressing one domain
           in isolation without cross-domain integration.
         </p>
       </div>
@@ -75,7 +75,7 @@ const sections = [
         caregivers in multilingual, low-literacy, and resource-constrained environments. Parents and
         healthcare workers lack an integrated AI platform that can proactively detect health risks,
         personalize nutrition advice, respond to emergencies intelligently, and communicate in local
-        languages — resulting in delayed interventions and poor child health outcomes, particularly in Sri
+        languages resulting in delayed interventions and poor child health outcomes, particularly in Sri
         Lanka and similar South Asian contexts.
       </p>
     ),
@@ -89,8 +89,8 @@ const sections = [
         <div className="bg-purple-100/60 rounded-xl p-4 border border-purple-200/60">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Main Objective</p>
           <p className="text-gray-default leading-relaxed">
-            To develop an AI-powered mobile-based decision support system that proactively optimizes
-            pediatric health outcomes by integrating predictive growth analytics, personalized nutrition
+            To develop an AI-powered mobile-based decision support, health tracking and system that proactively optimizes
+            pediatric health and care outcomes by integrating predictive growth and health analytics, personalized nutrition
             optimization, real-time emergency response, and multilingual voice-activated caregiver support.
           </p>
         </div>
@@ -129,7 +129,7 @@ const sections = [
           },
         ].map((c) => (
           <div key={c.id} className="border border-border rounded-xl p-4">
-            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">{c.label} — {c.id}</p>
+            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">{c.label}</p>
             <ul className="space-y-1.5 text-gray-default">
               {c.items.map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -151,19 +151,19 @@ const sections = [
       <div className="space-y-4 text-sm lg:text-base text-gray-default">
         {[
           {
-            title: "Component 1 — Hybrid LSTM-DNN",
-            body: "Data collected from 69 Sri Lankan families (265 longitudinal time-points, Colombo, February 2026) and the PIC secondary dataset (64 ICU patients). LSTM layers capture temporal growth trajectories; DNN layers process cross-domain features simultaneously. Four transfer learning strategies were evaluated — all demonstrated domain mismatch, confirming the need for primary Sri Lankan training data. SHAP analysis identified culturally specific dietary features (rice, dhal, local proteins) contributing ~37% of predictive importance.",
+            title: "Component 1 - Hybrid LSTM-DNN",
+            body: "Data collected from 69 Sri Lankan families (265 longitudinal time-points, Colombo, February 2026) and the PIC secondary dataset (64 ICU patients). LSTM layers capture temporal growth trajectories; DNN layers process cross-domain features simultaneously. Four transfer learning strategies were evaluated all demonstrated domain mismatch, confirming the need for primary Sri Lankan training data. SHAP analysis identified culturally specific dietary features (rice, dhal, local proteins) contributing ~37% of predictive importance.",
           },
           {
-            title: "Component 2 — Nutrition Optimization",
+            title: "Component 2 - Nutrition Optimization",
             body: "BERT extracts structured nutritional information from caregiver text descriptions. CNN-based image scanner classifies food items and estimates nutrient content. Collaborative filtering personalizes recommendations based on historical child and caregiver behavior patterns. Output includes adaptive meal plans, nutrient gap alerts, and a community nutrition-sharing feed. Datasets: USDA FoodData Central, Food-101, WHO Child Growth Standards.",
           },
           {
-            title: "Component 3 — Emergency Response",
+            title: "Component 3 - Emergency Response",
             body: "Supervised ML models trained on PECARN and MIMIC-IV Pediatric datasets generate real-time risk scores from vital signs, prior health events, and caregiver-reported symptoms. Risk thresholds trigger alerts, first-response guidance, WebRTC teleconsultation initiation, and Google Maps routing. A post-incident feedback loop retrains the model on outcome data.",
           },
           {
-            title: "Component 4 — Multilingual Voice Assistant",
+            title: "Component 4 - Multilingual Voice Assistant",
             body: "Whisper API handles multilingual speech-to-text, fine-tuned on pediatric corpora. GPT/Gemini-based NLP extracts intent and entities from queries. RAG pipeline retrieves verified clinical knowledge from vectorized databases (MedIQAD, MedlinePlus) using FAISS/Elasticsearch. Responses are generated to be age-appropriate, linguistically accurate, and emotionally sensitive to caregiver urgency.",
           },
         ].map((m) => (
