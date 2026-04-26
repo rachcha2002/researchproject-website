@@ -51,13 +51,7 @@ const docGroups: DocGroup[] = [
       { label: "Check List 2", status: import.meta.env.VITE_DOCS_CHECKLIST2 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST2 },
     ],
   },
-  {
-    category: "Progress Reports",
-    docs: [
-      { label: "Progress Report 1", status: import.meta.env.VITE_DOCS_PR1 ? "available" : "pending", href: import.meta.env.VITE_DOCS_PR1 },
-      { label: "Progress Report 2", status: import.meta.env.VITE_DOCS_PR2 ? "available" : "pending", href: import.meta.env.VITE_DOCS_PR2 },
-    ],
-  },
+  
   {
     category: "Final Documents",
     docs: [
