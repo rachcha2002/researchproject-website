@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
+import logoFavicon from "../assets/peditrack_logo/PediTrackLogo-removebg logo only.png";
 
 function NotFoundComponent() {
   return (
@@ -45,6 +46,11 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: logoFavicon,
+      },
       {
         rel: "stylesheet",
         href: appCss,

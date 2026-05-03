@@ -32,7 +32,7 @@ const docGroups: DocGroup[] = [
   {
     category: "Project Charter",
     docs: [
-      { label: "Group Project Charter - 25-26J-442", status: import.meta.env.VITE_DOCS_CHARTER ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHARTER },
+      { label: "Group Project Charter (Topic Assessment Form) - 25-26J-442", status: import.meta.env.VITE_DOCS_CHARTER ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHARTER },
     ],
   },
   {
@@ -49,6 +49,7 @@ const docGroups: DocGroup[] = [
     docs: [
       { label: "Check List 1", status: import.meta.env.VITE_DOCS_CHECKLIST1 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST1 },
       { label: "Check List 2", status: import.meta.env.VITE_DOCS_CHECKLIST2 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST2 },
+      { label: "Check List 3", status: import.meta.env.VITE_DOCS_CHECKLIST3 ? "available" : "pending", href: import.meta.env.VITE_DOCS_CHECKLIST3 },
     ],
   },
   
