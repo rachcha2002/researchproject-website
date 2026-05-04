@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { Mail, User, Brain, Salad, Siren, Mic2, GraduationCap, Star } from "lucide-react";
+import { Mail, User, Brain, Salad, Siren, Mic2, GraduationCap, Star, Linkedin } from "lucide-react";
 import rachithImg from "@/assets/images/team/rachith1.JPG";
 import tharinduImg from "@/assets/images/team/tharindu.jpeg";
 import githadiImg from "@/assets/images/team/githadi.jpeg";
@@ -24,6 +24,7 @@ const members = [
     name: "Rachith Tharana Munasing",
     reg: "IT22107114",
     email: "IT22107114@my.sliit.lk",
+    linkedin: import.meta.env.VITE_LINKEDIN_RACHITH || "",
     component: "AI-Driven Predictive Health Analytics with Multi-Domain Integration",
     role: "Group Leader",
     Icon: Brain,
@@ -35,6 +36,7 @@ const members = [
     name: "Tharindu Nawarathne",
     reg: "IT22218612",
     email: "IT22218612@my.sliit.lk",
+    linkedin: import.meta.env.VITE_LINKEDIN_THARINDU || "",
     component: "ML-Driven Personalized Nutrition Optimization with Behavioral Analysis",
     role: "Research Member",
     Icon: Salad,
@@ -46,6 +48,7 @@ const members = [
     name: "Githadi Wijayarathna",
     reg: "IT22087010",
     email: "IT22087010@my.sliit.lk",
+    linkedin: import.meta.env.VITE_LINKEDIN_GITHADI || "",
     component: "Real-Time Emergency Response Integration with Predictive Risk Assessment",
     role: "Research Member",
     Icon: Siren,
@@ -57,6 +60,7 @@ const members = [
     name: "Kavinda Kurukulasooriya",
     reg: "IT22121738",
     email: "IT22121738@my.sliit.lk",
+    linkedin: import.meta.env.VITE_LINKEDIN_KAVINDA || "",
     component: "Multilingual Voice-Activated Caregiver Support System",
     role: "Research Member",
     Icon: Mic2,
@@ -110,13 +114,27 @@ function MemberCard({ m, index }: { m: typeof members[0]; index: number }) {
           </div>
         </div>
         <p className="mt-3 text-sm text-gray-default leading-relaxed">{m.component}</p>
-        <a
-          href={`mailto:${m.email}`}
-          className="mt-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
-        >
-          <Mail className="h-4 w-4 group-hover:text-primary" />
-          <span className="truncate">{m.email}</span>
-        </a>
+        <div className="mt-4 flex items-center justify-between">
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${m.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+          >
+            <Mail className="h-4 w-4 group-hover:text-primary" />
+            <span className="truncate">{m.email}</span>
+          </a>
+          {m.linkedin && (
+            <a
+              href={m.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <Linkedin className="h-4 w-4 group-hover:text-primary" />
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );

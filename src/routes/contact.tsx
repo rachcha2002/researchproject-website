@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle, Linkedin } from "lucide-react";
 
 // ─── STEP: Paste your Formspree endpoint here once you sign up at https://formspree.io ───
 // Example: "https://formspree.io/f/xyzabcde"
@@ -97,7 +97,7 @@ function ContactPage() {
                 Icon: Mail,
                 label: "Group Leader Email",
                 value: "rachiththarana@gmail.com",
-                href: "mailto:rachiththarana@gmail.com",
+                href: "https://mail.google.com/mail/?view=cm&fs=1&to=rachiththarana@gmail.com",
               },
               {
                 Icon: MapPin,
@@ -119,7 +119,7 @@ function ContactPage() {
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wide">{item.label}</p>
                   {item.href ? (
-                    <a href={item.href} className="text-sm text-dark hover:text-primary transition-colors font-medium mt-0.5 block">
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-dark hover:text-primary transition-colors font-medium mt-0.5 block">
                       {item.value}
                     </a>
                   ) : (
@@ -134,16 +134,23 @@ function ContactPage() {
               <p className="text-xs font-bold text-primary uppercase tracking-wide mb-2">Group Members</p>
               <ul className="space-y-1.5 text-sm text-gray-default">
                 {[
-                  { reg: "Rachith", email: "IT22107114@my.sliit.lk" },
-                  { reg: "Tharindu", email: "IT22218612@my.sliit.lk" },
-                  { reg: "Githadi", email: "IT22087010@my.sliit.lk" },
-                  { reg: "Kavinda", email: "IT22121738@my.sliit.lk" },
+                  { reg: "Rachith", email: "IT22107114@my.sliit.lk", linkedin: import.meta.env.VITE_LINKEDIN_RACHITH || "" },
+                  { reg: "Tharindu", email: "IT22218612@my.sliit.lk", linkedin: import.meta.env.VITE_LINKEDIN_THARINDU || "" },
+                  { reg: "Githadi", email: "IT22087010@my.sliit.lk", linkedin: import.meta.env.VITE_LINKEDIN_GITHADI || "" },
+                  { reg: "Kavinda", email: "IT22121738@my.sliit.lk", linkedin: import.meta.env.VITE_LINKEDIN_KAVINDA || "" },
                 ].map((m) => (
-                  <li key={m.reg} className="flex items-center justify-between gap-2 flex-wrap">
+                  <li key={m.reg} className="flex items-center justify-between gap-2 flex-wrap py-0.5">
                     <span className="font-mono text-xs font-bold text-dark">{m.reg}</span>
-                    <a href={`mailto:${m.email}`} className="text-xs text-primary hover:underline truncate">
-                      {m.email}
-                    </a>
+                    <div className="flex items-center gap-3 ml-auto">
+                      <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${m.email}`} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline truncate">
+                        {m.email}
+                      </a>
+                      {m.linkedin && (
+                        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light transition-colors" title="LinkedIn Profile">
+                          <Linkedin className="h-3.5 w-3.5" />
+                        </a>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>

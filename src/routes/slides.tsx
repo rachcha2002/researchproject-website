@@ -174,7 +174,7 @@ function SlidesPage() {
                 <p className="text-sm text-gray-default mt-1">
                   Presentation slides will be linked here immediately after each assessment. Contact the group
                   leader at{" "}
-                  <a href="mailto:IT22107114@my.sliit.lk" className="text-primary hover:underline">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=IT22107114@my.sliit.lk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                     IT22107114@my.sliit.lk
                   </a>{" "}
                   for access to any specific slides.
