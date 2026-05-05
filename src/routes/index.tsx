@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import fullLogo from "../assets/peditrack_logo/PediTrackLogo-removebg.png";
 
-export const Route = createFileRoute("/")(  {
+export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
@@ -74,7 +74,12 @@ const quickLinks = [
   { to: "/domain", label: "Research Domain", sub: "Literature, gap, methodology", Icon: BookOpen },
   { to: "/milestones", label: "Milestones", sub: "Assessments & timelines", Icon: GraduationCap },
   { to: "/documents", label: "Documents", sub: "Reports & checklists", Icon: FileText },
-  { to: "/slides", label: "Presentations", sub: "Slides from past sessions", Icon: PresentationIcon },
+  {
+    to: "/slides",
+    label: "Presentations",
+    sub: "Slides from past sessions",
+    Icon: PresentationIcon,
+  },
   { to: "/about", label: "About Us", sub: "Team & supervisors", Icon: Users },
   { to: "/contact", label: "Contact Us", sub: "Get in touch", Icon: Mail },
 ];
@@ -114,7 +119,7 @@ function Index() {
               className="mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-dark leading-[1.08]"
             >
               Integrated Predictive Intelligence{" "}
-              <span className="text-gradient-primary">Platform for Pediatric Healthcare</span>
+              <span className="text-gradient-primary">Tool for Pediatric Healthcare</span>
             </motion.h1>
 
             <motion.p
@@ -128,9 +133,10 @@ function Index() {
               {...fade(0.35)}
               className="mt-5 text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              An AI-powered mobile application for proactive, personalized, and inclusive
-              pediatric care integrating predictive growth and health analytics, nutrition optimization, emergency
-              response, and multilingual voice-activated caregiver support for children aged 1–6 years.
+              An AI-powered mobile application for proactive, personalized, and inclusive pediatric
+              care integrating predictive growth and health analytics, nutrition optimization,
+              emergency response, and multilingual voice-activated caregiver support for children
+              aged 1–6 years.
             </motion.p>
 
             <motion.div {...fade(0.45)} className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -159,18 +165,22 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-s font-bold tracking-widest text-primary uppercase mb-3">Abstract</p>
+              <p className="text-s font-bold tracking-widest text-primary uppercase mb-3">
+                Abstract
+              </p>
               <h2 className="text-2xl lg:text-3xl font-bold text-dark mb-5">Project Overview</h2>
               <p className="text-gray-default leading-relaxed text-base lg:text-lg">
-                IPITPH is an AI-powered mobile-based decision support and health tracking system designed to transform
-                pediatric healthcare for children aged 1–6 years. The system integrates four intelligent
-                components: AI-driven predictive growth and healthanalytics using a Hybrid LSTM-DNN architecture,
-                ML-based personalized nutrition optimization with behavioral analysis, real-time emergency
-                response with predictive risk assessment, and a voice-activated multilingual caregiver
-                support system. By fusing multi-domain health data including growth metrics, nutrition,
-                sleep behavior, and environmental factors, the platform empowers caregivers and healthcare
-                providers with timely, personalized, and proactive decision-making support addressing
-                fragmented pediatric data systems and delayed interventions in underserved and guest communities.
+                IPITPH is an AI-powered mobile-based decision support and health tracking system
+                designed to transform pediatric healthcare for children aged 1–6 years. The system
+                integrates four intelligent components: AI-driven predictive growth and
+                healthanalytics using a Hybrid LSTM-DNN architecture, ML-based personalized
+                nutrition optimization with behavioral analysis, real-time emergency response with
+                predictive risk assessment, and a voice-activated multilingual caregiver support
+                system. By fusing multi-domain health data including growth metrics, nutrition,
+                sleep behavior, and environmental factors, the Tool empowers caregivers and
+                healthcare providers with timely, personalized, and proactive decision-making
+                support addressing fragmented pediatric data systems and delayed interventions in
+                underserved and guest communities.
               </p>
             </motion.div>
           </div>
@@ -180,7 +190,9 @@ function Index() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-s font-bold tracking-widest text-primary uppercase mb-2">Components</p>
+              <p className="text-s font-bold tracking-widest text-primary uppercase mb-2">
+                Components
+              </p>
               <h2 className="text-2xl lg:text-3xl font-bold text-dark">Four Research Components</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -193,7 +205,9 @@ function Index() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow group border border-border"
                 >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${c.color} flex items-center justify-center mb-4`}
+                  >
                     <c.Icon className="h-6 w-6 text-white" />
                   </div>
                   <span className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
@@ -211,7 +225,9 @@ function Index() {
         {/* ── Supervisors ── */}
         <section className="bg-white py-14">
           <div className="max-w-4xl mx-auto px-5 lg:px-8 text-center">
-            <p className="text-s font-bold tracking-widest text-primary uppercase mb-4">Supervision</p>
+            <p className="text-s font-bold tracking-widest text-primary uppercase mb-4">
+              Supervision
+            </p>
             <div className="flex flex-wrap justify-center gap-6">
               {[
                 { role: "Supervisor", name: "Prof. Samantha Thelijjagoda", inst: "SLIIT" },
@@ -225,7 +241,9 @@ function Index() {
                   <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-3">
                     <GraduationCap className="h-6 w-6 text-white" />
                   </div>
-                  <p className="text-[10px] font-bold tracking-widest text-primary uppercase">{s.role}</p>
+                  <p className="text-[10px] font-bold tracking-widest text-primary uppercase">
+                    {s.role}
+                  </p>
                   <p className="mt-1 text-sm font-bold text-dark">{s.name}</p>
                   {s.inst && <p className="text-xs text-muted-foreground">{s.inst}</p>}
                 </div>
@@ -238,7 +256,9 @@ function Index() {
         <section className="py-16 lg:py-20 bg-background">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-s font-bold tracking-widest text-primary uppercase mb-2">Navigate</p>
+              <p className="text-s font-bold tracking-widest text-primary uppercase mb-2">
+                Navigate
+              </p>
               <h2 className="text-2xl font-bold text-dark">Explore the Site</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
